@@ -69,13 +69,13 @@ function load_files(files) {
 
 
 
-readFiles('./results/',
+readFiles(DATA_DIR_NAME,
     error => {
         throw Error(error)
     },
     (files) => {
         loaded_files = load_files(files);
         let data = JSON.stringify(loaded_files);
-        fs.writeFileSync(DATA_DIR_NAME + 'calculated.json', data);
+        fs.writeFileSync('./results/' + 'calculated.json', data);
     }
 );

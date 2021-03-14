@@ -1,14 +1,13 @@
 var fs = require('fs');
 
 const DATA_PATH = './results/';
-const DOC_PATH = "./documents/";
 
 let raw_data = fs.readFileSync(DATA_PATH + 'calculated.json');
 let parsed_data = JSON.parse(raw_data);
 
 let stop_words = []
 
-fs.readFileSync(DOC_PATH + 'stop_words.txt', 'utf-8')
+fs.readFileSync(DATA_PATH + 'stop_words.txt', 'utf-8')
     .split(/\r?\n/)
     .map(text => text.trim())
     .forEach(function(line) {
